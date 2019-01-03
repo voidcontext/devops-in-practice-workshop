@@ -1,7 +1,7 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: pet-web
+  name: pet-web-canary
   labels:
     app: pet
 spec:
@@ -19,7 +19,7 @@ spec:
         track: canary
     spec:
       containers:
-        - image: us.gcr.io/devops-workshop-gabor/pet-app
+        - image: us.gcr.io/devops-workshop-123/pet-app
           imagePullPolicy: IfNotPresent
           name: pet-web
           env:
